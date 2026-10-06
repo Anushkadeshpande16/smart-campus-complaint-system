@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-[#f4f6f7] font-sans text-slate-800 antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight text-ink-900; }
+}
+
+@layer components {
+  .input {
+    @apply block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 shadow-sm
+           focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 disabled:bg-slate-100;
+  }
+  .input-error { @apply border-rose-400 focus:border-rose-500 focus:ring-rose-500/30; }
+  .card { @apply rounded-xl border border-slate-200 bg-white; }
+  .label { @apply mb-1 block text-sm font-medium text-slate-700; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.hero-rise { animation: rise 0.7s ease-out both; }
